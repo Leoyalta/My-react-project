@@ -1,0 +1,13 @@
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 5px;
+    width: 1000px;
+    list-style: none;
+}
+itemCss{
+    border: 2px solid rgb(106, 106, 238);
+    color: blueviolet;
+}

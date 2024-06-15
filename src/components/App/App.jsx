@@ -1,24 +1,48 @@
 // src/App.jsx
+import { FaBeer } from "react-icons/fa";
+import { AiFillApple } from "react-icons/ai";
+
 import AppBar from '../AppBar/AppBar';
 import {Product} from '../product/product';
 import officers  from '../../officers.json'
-console.log(officers);
+// console.log(officers);
 import OfficerList from './OfficerList/OfficerList';
 
+import css from "./App.module.css"
 
-// src/components/App.js
+const Box = ({children}) => {
+  return (
+    <div>
+      <p>This is box</p>
+      {children}
+    </div>
+  )
+}
+const Section = ({title, children}) => {
+  return (
+    <section>
+      <h2>{title}</h2>
+      {children}
+    </section>
+  )
+}
 
 export default function App() {
   const isModalOpen = true;
   return (
-    <div>
+    <div className={css.container}>
       <AppBar/>
-      <h1>Best selling</h1>
+      <h1>Best selling
+        <h3>
+      Lets go for a <FaBeer  size={40}/>
+    </h3>
+    </h1>
+    <div>
+<AiFillApple size={50} className={css.icon}/>
+    </div>
 <div>
   {isModalOpen ? <h2> Midal is open</h2> :  <h2>Modal closed</h2>}
-  {/* <h2>{2 < 1 ?'Modal is open' : 'Modal closed' }</h2> */}
   {isModalOpen && <h2> Midal is open</h2>}
- 
 </div>
       <div>
 <Product
@@ -54,6 +78,21 @@ export default function App() {
       <div>
         <OfficerList items={officers}/>
       </div>
+      <div className="containerA">
+      <Box> 
+        <h3>Hi Childrens!</h3>
+      </Box>
+      </div>
+      <div className={css.section}>
+    <Section title="Hi!"><p>Your message</p> </Section>
+      <Section title="Hola!"> <p>Tu mensaje</p></Section>
+      <Section  title="Привіт!"> <ul>
+        <li>Твоє повідомлення</li>
+      <li>Ваші слова</li>
+      <li>Пес Патрон</li>
+      </ul></Section>
+      </div>
+
       </div>
     );
 }

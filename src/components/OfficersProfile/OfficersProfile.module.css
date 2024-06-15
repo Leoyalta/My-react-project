@@ -1,0 +1,13 @@
+.container {
+    border: 2px solid black;
+    padding: 5px;
+}
+.text {
+    margin: 0;
+}
+.isActive {
+    color: rgb(73, 192, 73);
+}
+.isRetired  {
+    color: rgb(210, 55, 55);
+}
